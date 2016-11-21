@@ -31,6 +31,12 @@ Plugin 'honza/vim-snippets'
 Plugin 'AndrewRadev/switch.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'rosenfeld/conque-term'
+"Plugin 'terryma/vim-multiple-cursors'
+"Plugin 'mbbill/undotree'
+"Plugin 'tpope/vim-dispatch'
+"Plugin 'klen/python-mode'
+"Plugin 'elzr/vim-json'
+"Plugin 'easymotion/vim-easymotion'
 
 call vundle#end()
 filetype plugin indent on
