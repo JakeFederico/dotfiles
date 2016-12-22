@@ -31,12 +31,12 @@ Plugin 'honza/vim-snippets'
 Plugin 'AndrewRadev/switch.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'rosenfeld/conque-term'
-"Plugin 'terryma/vim-multiple-cursors'
-"Plugin 'mbbill/undotree'
-"Plugin 'tpope/vim-dispatch'
-"Plugin 'klen/python-mode'
-"Plugin 'elzr/vim-json'
-"Plugin 'easymotion/vim-easymotion'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'mbbill/undotree'
+Plugin 'tpope/vim-dispatch'
+Plugin 'klen/python-mode'
+Plugin 'elzr/vim-json'
+Plugin 'easymotion/vim-easymotion'
 
 call vundle#end()
 filetype plugin indent on
@@ -171,7 +171,7 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 
-map <c-n> :NERDTreeToggle<cr>
+map <leader><cr> :NERDTreeToggle<cr>
 map <c-m> :NERDTreeFind<cr>
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
@@ -232,3 +232,16 @@ let g:switch_custom_definitions =
       \ ]
 
 let g:delimitMate_expand_cr = 1
+
+let g:pymode_folding = 0
+let g:pymode_lint_checkers = ['pylint']
+let g:pymode_trim_whitespaces = 0
+let g:pymode_options = 0
+let g:pymode_options_max_line_length = 0
+let g:pymode_options_colorcolumn = 0
+let g:pymode_lint_options_pylint = {'rcfile':"~/pylint.rc"}
+let g:pymode_rope_completion = 0
+let g:pymode_lint_on_write = 0
+
+nmap <leader>u :UndotreeToggle<cr>
+map <leader><c-n> :MultipleCursorsFind
