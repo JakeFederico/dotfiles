@@ -1,0 +1,6 @@
+[submodule "fonts"]
+	path = fonts
+	url = ./fonts/
+[submodule "Bear"]
+	path = Bear
+	url = ./Bear/
