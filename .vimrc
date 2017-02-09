@@ -80,6 +80,7 @@ set listchars=
 "set listchars=tab:▸\
 "set listchars+=extends:❯,precedes:❮
 set fileformats=unix,dos,mac
+set nrformats-=octal
 
 augroup ALL
   autocmd!
@@ -160,6 +161,10 @@ let g:ctrlp_types = ['mru', 'fil']
 
 :command W w
 :command Q q
+:command Wa wa
+:command Qa qa
+:command Sh sh
+:command Vsp vsplit
 
 map <up> <nop>
 map <down> <nop>
