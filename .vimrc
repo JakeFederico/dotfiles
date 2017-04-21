@@ -24,7 +24,7 @@ Plugin 'airblade/vim-gitgutter' " Git gutter
 Plugin 'tpope/vim-fugitive' " Git commands
 Plugin 'Valloric/YouCompleteMe' " YCM
 "Plugin 'rdnetto/YCM-Generator'
-"Plugin 'godlygeek/tabular' " Tabularize
+Plugin 'godlygeek/tabular' " Tabularize
 "Plugin 'vim-scripts/Conque-GDB' " GDB
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -37,6 +37,10 @@ Plugin 'tpope/vim-dispatch'
 Plugin 'klen/python-mode'
 Plugin 'elzr/vim-json'
 Plugin 'easymotion/vim-easymotion'
+"Plugin 'mnpk/vim-jira-complete'
+"Plugin 'Shougo/unite.vim'
+"Plugin 'mattn/webapi-vim'
+"Plugin 'rafi/vim-unite-issue'
 
 call vundle#end()
 filetype plugin indent on
@@ -92,6 +96,20 @@ augroup ALL
       %s/\s\+$//e
       call cursor(l, c)
   endfun
+
+  "function! IssueJira(issue)
+  "    exec 'Unite issue:jira -custom-issue-jql=issueKey=' . a:issue
+  "    exec 'normal! <cr>'
+  "    exec 'normal! <cr>'
+  "    exec 'normal! <cr>'
+  "    exec 'normal! <cr>'
+  "    exec 'normal! <cr>'
+  "    exec 'normal! <cr>'
+  "    exec 'normal! <cr>'
+  "endfun
+  "function! QueryJira(query)
+  "    exec 'Unite issue:jira -custom-issue-jql=' . a:query
+  "endfun
 
   " Clear trailing white spaces
   au BufWrite * call StripTrailingWhitespaces()
@@ -161,6 +179,7 @@ let g:ctrlp_types = ['mru', 'fil']
 
 :command W w
 :command Q q
+:command Wq wq
 :command Wa wa
 :command Qa qa
 :command Sh sh
@@ -208,7 +227,6 @@ let g:ycm_add_preview_to_completeopt = 0
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
 nmap gj :YcmCompleter GoTo<cr>
-nmap ? :YcmCompleter GetDoc<cr>
 
 let g:UltiSnipsExpandTrigger="<c-l>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
@@ -226,7 +244,9 @@ let g:switch_custom_definitions =
       \   ['TRUE', 'FALSE'],
       \   ['!= TRUE', '== TRUE'],
       \   ['!= FALSE', '== FALSE'],
+      \   ['is_false', 'is_equal'],
       \   ['pick', 'fixup', 'squash', 'reword', 'edit'],
+      \   ['ALLOWED', 'NOT_ALLOWED'],
       \   {
       \     '\v(( +).*\(*)(\(.*\))\)' : '\1\3 ||\r\2())',
       \     '\v(.*) \|\|\n +\(\)\)' : '\1)',
@@ -250,3 +270,15 @@ let g:pymode_lint_on_write = 0
 
 nmap <leader>u :UndotreeToggle<cr>
 map <leader><c-n> :MultipleCursorsFind
+
+"let g:jiracomplete_url = 'https://.com'
+"let g:jiracomplete_username = 'jfederico'
+"let g:jiracomplete_password = ''
+"imap <c-j> <Plug>JiraComplete
+
+"let g:jira_url = 'https://.com'
+"let g:jira_username = 'jfederico'
+"let g:jira_password = ''
+":command Jira Unite issue:jira
+"command! -nargs=1 JiraIssue call IssueJira(<f-args>)
+"command! -nargs=1 JiraQuery call QueryJira(<f-args>)
