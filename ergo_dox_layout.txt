@@ -1,1 +1,2 @@
 http://configure.ergodox-ez.com/keyboard_layouts/kblpnw/edit
+https://configure.ergodox-ez.com/ergodox-ez/layouts/wOWm3/latest/0
